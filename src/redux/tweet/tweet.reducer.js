@@ -7,7 +7,7 @@ const tweetReducer = (state = INITIAL_STATE, action) => {
     case 'POST_TWEET':
       return {
         ...state,
-        tweets: action.payload,
+        tweets: [action.newTweet, ...state.tweets],
       };
     default:
       return state;
