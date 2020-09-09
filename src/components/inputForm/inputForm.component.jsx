@@ -18,12 +18,10 @@ class InputForm extends React.Component {
   }
 
   onFinish = (values) => {
-    console.log('Success:', values);
-    console.log(values);
     const newTweet = {
       id: uuid(),
       tweet: values.tweet,
-      expiryDate: values.expiryDate,
+      expiryDate: values.expiryDate.toLocaleString(),
     };
     this.props.dispatch({
       type: 'POST_TWEET',
@@ -51,6 +49,7 @@ class InputForm extends React.Component {
           <Form.Item
             label="Tweet"
             name="tweet"
+            className="formData"
             rules={[
               {
                 required: true,
@@ -62,6 +61,7 @@ class InputForm extends React.Component {
           </Form.Item>
           <Form.Item
             label="DatePicker"
+            className="formData"
             name="expiryDate"
             rules={[
               {

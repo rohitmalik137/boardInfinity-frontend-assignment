@@ -7,10 +7,15 @@ import './tweetsContainer.styles.scss';
 class TweetsContainer extends React.Component {
   render() {
     return (
-      <div>
-        <h1>TweetsContainer</h1>
+      <div className="grid">
         {this.props.tweet.tweet.tweets.map((tweet) => {
-          return <Tweet key={tweet.id} tweet={tweet.tweet} />;
+          return (
+            <Tweet
+              key={tweet.id}
+              tweet={tweet.tweet}
+              expiryDate={tweet.expiryDate}
+            />
+          );
         })}
       </div>
     );

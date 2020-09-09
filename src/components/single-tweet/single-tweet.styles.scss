@@ -1,0 +1,41 @@
+.single-tweet-container {
+  perspective: 60rem;
+  margin: 20px;
+  height: 10rem;
+  -moz-perspective: 60rem;
+  position: relative;
+
+  &:hover .single-tweet--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover .single-tweet--back {
+    transform: rotateY(0);
+  }
+
+  .single-tweet__side {
+    height: 10rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
+  }
+
+  .single-tweet--front {
+    background-color: rgb(189, 229, 252);
+    padding: 10px;
+  }
+
+  .single-tweet--back {
+    background-color: rgb(255, 172, 172);
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
